@@ -1,19 +1,21 @@
-#include <stdlib.h>
 #include <stdio.h>
-
 /**
- *main- alpha: letter a to z except e & q
- *
- * Return: Always 0 (success)
+ * main - main block
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: 0
  */
-
 int main(void)
 {
-	char alpha;
+	char c = 'a';
 
-	for (alpha = 'a'; alpha <= 'z'; alpha++)
-	if (alpha != 'e' && alpha != 'q')
-		putchar(alpha);
+	while (c <= 'z')
+	{
+		if (c != 'e' && c != 'q')
+		{
+			putchar(c);
+		}
+		c++;
+	}
 
 	putchar('\n');
 	return (0);

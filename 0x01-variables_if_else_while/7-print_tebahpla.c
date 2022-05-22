@@ -1,18 +1,21 @@
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <time.h>
+#include <stdlib.h>
 /**
- *main- alpha: letter z to a
- *
- * Return: Always 0 (success)
+ * main - main block
+ * Description: prints all single digit numbers of base 10
+ * starting from 0, followed by a new line.
+ * Return: 0
  */
-
 int main(void)
 {
-	char alpha;
+	char c = 'z';
 
-	for (alpha = 'z'; alpha >= 'a'; alpha--)
-		putchar(alpha);
+	while (c >= 'a')
+	{
+		putchar(c);
+		c--;
+	}
 
 	putchar('\n');
 	return (0);

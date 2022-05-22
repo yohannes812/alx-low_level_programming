@@ -1,22 +1,22 @@
-#include <stdlib.h>
+
 #include <stdio.h>
 
 /**
- *main- alpha: letter a to z
- *
- * Return: Always 0 (success)
+ * main - Entry point
+ * Return:0
  */
-
 int main(void)
 {
-	char alpha, omega;
+	int i, y;
+	for (i = 0; i < 10; i++)
+	{
+		putchar (i + '0');
+	}
+	for (y = 'a'; y <= 'f'; y++)
+	{
+		putchar (y);
+	}
 
-	for (alpha = '0'; alpha <= '9'; alpha++)
-		putchar(alpha);
-
-	for (omega = 'a'; omega <= 'f'; omega++)
-		putchar(omega);
-
-	putchar('\n');
-	return (0);
+putchar('\n');
+return (0);
 }

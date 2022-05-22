@@ -1,1 +1,1 @@
-Code debugging
+Debugging

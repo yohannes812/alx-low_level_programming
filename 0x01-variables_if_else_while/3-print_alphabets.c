@@ -1,21 +1,27 @@
-#include <stdlib.h>
 #include <stdio.h>
-
 /**
- *main- alpha: letter a to z
- *
- * Return: Always 0 (success)
+ * main - main block
+ * Description:  prints the alphabet in lowercase,
+ * and then in uppercase, followed by a new line.
+ * Return: 0
  */
-
 int main(void)
 {
-	char alpha, omega;
+	char c = 'a';
 
-	for (alpha = 'a'; alpha <= 'z'; alpha++)
-		putchar(alpha);
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
 
-	for (omega = 'A'; omega <= 'Z'; omega++)
-		putchar(omega);
+	c = 'A';
+
+	while (c <= 'Z')
+	{
+		putchar(c);
+		c++;
+	}
 
 	putchar('\n');
 	return (0);

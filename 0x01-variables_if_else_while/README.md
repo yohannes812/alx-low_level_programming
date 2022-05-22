@@ -1,1 +1,1 @@
-A projecton C Variables, if, else, while and operators
+Variables, if else, while
