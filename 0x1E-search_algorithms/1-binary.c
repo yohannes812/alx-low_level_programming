@@ -1,7 +1,12 @@
+/*
+ * File: 1-binary.c
+ *Auth: Yohannes T.
+ */
+
 #include "search_algos.h"
 
 /**
- * binary_search - binary search implementation
+ * binary_search - binary search implementation for a value in a sorted array
  * @array: string
  * @size: size_t
  * @value: value
