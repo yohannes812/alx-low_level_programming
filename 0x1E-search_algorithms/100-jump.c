@@ -1,39 +1,43 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
-  * jump_search - Searches for a value in a sorted array
-  *               of integers using jump search.
-  * @array: A pointer to the first element of the array to search.
-  * @size: The number of elements in the array.
-  * @value: The value to search for.
-  *
-  * Return: If the value is not present or the array is NULL, -1.
-  *         Otherwise, the first index where the value is located.
-  *
-  * Description: Prints a value every time it is compared in the array.
-  *              Uses the square root of the array size as the jump step.
-  */
+ * jump_search - Function that performs a jump search
+ * to find the target value
+ * @array: The passed in array
+ * @size: The size of the given array
+ * @value: The target value to be searched for
+ * Return: The index of the target value, or -1 if not found
+ */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t i, jump, step;
+	int position = 0, jump = sqrt((int)size);
+	int temp = 0;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 
-	step = sqrt(size);
-	for (i = jump = 0; jump < size && array[jump] < value;)
+	while (position < (int)size)
 	{
-		printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
-		i = jump;
-		jump += step;
+		printf("Value checked array[%d] = [%d]\n", position, array[position]);
+		if (array[position + jump - 1] >= value || position + jump >= (int)size)
+			break;
+
+		position += jump;
 	}
 
-	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
+	printf("Value found between indexes [%d] and [%d]\n", position,
+		position + jump);
 
-	jump = jump < size - 1 ? jump : size - 1;
-	for (; i < jump && array[i] < value; i++)
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	temp = position;
+	while (position < temp + jump && position < (int)size)
+	{
+		printf("Value checked array[%d] = [%d]\n", position, array[position]);
+		if (array[position] == value)
+			return (position);
 
-	return (array[i] == value ? (int)i : -1);
+		position++;
+	}
+
+	return (-1);
 }
